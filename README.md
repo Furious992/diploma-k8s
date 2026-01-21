@@ -1,16 +1,10 @@
-# Monitoring (kube-prometheus-stack)
+# Diploma Kubernetes Перцев Максим Андреевич
 
-Установка выполнялась через Helm chart `prometheus-community/kube-prometheus-stack`.
+В этом репозитории находятся Kubernetes-манифесты и описание части, связанной с работой кластера и мониторинга.
 
-## Установка
-```bash
-helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-helm repo update
+Здесь размещены:
+- манифесты для деплоя тестового приложения в Kubernetes,
+- описание установки системы мониторинга (Prometheus, Grafana, Alertmanager),
+- структура, показывающая, как приложение и мониторинг разворачиваются внутри кластера.
 
-kubectl create namespace monitoring
-
-helm install mon prometheus-community/kube-prometheus-stack \
-  -n monitoring \
-  --set grafana.service.type=LoadBalancer \
-  --set prometheus.service.type=ClusterIP \
-  --set alertmanager.service.type=ClusterIP
+Репозиторий используется для демонстрации работы с Kubernetes и эксплуатации приложения в кластере в рамках дипломного проекта.
